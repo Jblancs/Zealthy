@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw'
 
 export const handlers = [
-  http.get('/api/tickets', () => {
+  http.get('http://localhost:3000/tickets', () => {
     return HttpResponse.json([
       {
         id: 1,
