@@ -1,0 +1,65 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.104",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "axios": "^1.6.0",
+    "formik": "^2.4.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.12",
+    "typescript": "^4.9.5",
+    "util": "^0.12.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "vitest",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.34.6",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jest-dom": "^5.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-testing-library": "^6.1.0",
+    "eslint-plugin-vitest": "^0.3.8",
+    "jsdom": "^22.1.0",
+    "msw": "^2.0.3",
+    "npm": "^10.2.2",
+    "vitest": "^0.34.6"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}
