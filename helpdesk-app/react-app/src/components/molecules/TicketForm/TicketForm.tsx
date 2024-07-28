@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik'
 import * as S from './TicketForm.styles'
 import * as Yup from 'yup'
 import axios from '../../../api/axios'
+import Button from '../../atoms/Button/Button'
 
 interface FormValues {
   name: string
@@ -83,12 +84,13 @@ const TicketForm: React.FC = () => {
                 />
               </S.FormSectionContainer>
               <S.ButtonContainer>
-                <S.SubmitButton
-                  type="submit"
+                <Button
                   disabled={!isValid || isSubmitting || !allFieldsTouched}
+                  fontSize='18px'
+                  padding='5px 20px'
                 >
                   Submit
-                </S.SubmitButton>
+                </Button>
               </S.ButtonContainer>
             </S.FormComponent>
           )

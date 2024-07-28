@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as S from './TicketSummaryCard.styles'
 import { Ticket } from '../../../types'
+import Button from '../../atoms/Button/Button'
 
 const TicketSummaryCard: React.FC<{ details: Ticket }> = ({ details }) => {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ const TicketSummaryCard: React.FC<{ details: Ticket }> = ({ details }) => {
         <S.CardSection>{status}</S.CardSection>
         <S.CardSection>{email}</S.CardSection>
         <S.ButtonContainer>
-          <S.Button onClick={handleClick}>Details</S.Button>
+          <Button onClick={handleClick}>Details</Button>
         </S.ButtonContainer>
       </S.CardContainer>
     </>
