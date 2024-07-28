@@ -8,13 +8,6 @@ gap: 30px;
 font-size: 25px;
 `
 
-export const TicketHeader = styled.div`
-    font-size: 40px;
-    font-weight: bold;
-    border-bottom: 1px solid #bfbfbf;
-    padding: 40px 0;
-`
-
 export const CreatedByContainer = styled.div`
 display: flex;
 width: 100%;

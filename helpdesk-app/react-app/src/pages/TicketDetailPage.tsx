@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
 import { Ticket } from '../types'
+import PageHeader from '../components/atoms/PageHeader/PageHeader'
 
 const TicketDetailPage: React.FC = () => {
     const {id} = useParams<{id: string}>()
@@ -31,8 +32,8 @@ const TicketDetailPage: React.FC = () => {
 
     console.log(ticket)
 
-    if (isLoading) return <p>Loading...</p>
-    if (error) return <p>Error: {error}</p>;
+    if (isLoading) return <PageHeader>Loading...</PageHeader>
+    if (error) return <PageHeader>Error: {error}</PageHeader>;
 
     return (
         <div>

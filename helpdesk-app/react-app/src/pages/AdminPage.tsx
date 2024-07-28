@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../api/axios'
 import TicketSummaryCard from '../components/molecules/TicketSummary/TicketSummaryCard';
+import PageHeader from '../components/atoms/PageHeader/PageHeader';
 import { Ticket } from '../types';
 
 const AdminPage: React.FC = () => {
@@ -30,8 +31,8 @@ const AdminPage: React.FC = () => {
      }
     }, [])
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <PageHeader>Loading...</PageHeader>;
+  if (error) return <PageHeader>Error: {error}</PageHeader>;
 
   const ticketList = (
     <>
@@ -46,7 +47,7 @@ const AdminPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Tickets List</h1>
+      <PageHeader>Tickets List</PageHeader>
       {ticketList}
     </div>
   );

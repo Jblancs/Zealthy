@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import * as S from './TicketDetail.styles'
 import { Ticket } from '../../../types'
+import PageHeader from '../../atoms/PageHeader/PageHeader'
 
 const TicketDetailCard: React.FC<{details: Ticket | null}>= ({
     details
@@ -8,7 +9,7 @@ const TicketDetailCard: React.FC<{details: Ticket | null}>= ({
     if (!details) {
         return (
           <S.CardContainer>
-            <S.TicketHeader>Loading ticket details...</S.TicketHeader>
+            <PageHeader>Loading ticket details...</PageHeader>
           </S.CardContainer>
         )
     }
@@ -17,9 +18,9 @@ const TicketDetailCard: React.FC<{details: Ticket | null}>= ({
 
     return (
         <S.CardContainer>
-            <S.TicketHeader>
+            <PageHeader>
                 Support Ticket #{id}
-            </S.TicketHeader>
+            </PageHeader>
             <div>
                 Status: {status}
             </div>
