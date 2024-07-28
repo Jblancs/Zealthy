@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const Button = styled.button<{
     color?: string,
     padding?: string,
-    bgColor?: string,
+    bgcolor?: string,
     fontSize?: string
 }>`
   border: 2px solid black;
   border-radius: 20px;
   color: ${props => props.color};
-  background-color: ${props => props.bgColor};
+  background-color: ${props => props.bgcolor};
   padding: ${props => props.padding};
   font-size: ${props => props.fontSize};
   cursor: pointer;

@@ -37,4 +37,4 @@ def update_status(id):
     ticket.status = data['status']
     db.session.commit()
 
-    return jsonify({'message': 'Ticket updated successfully'})
+    return jsonify(ticket.to_dict())

@@ -4,6 +4,7 @@ import axios from '../api/axios'
 import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
 import { Ticket } from '../types'
 import PageHeader from '../components/atoms/PageHeader/PageHeader'
+import StatusForm from '../components/molecules/StatusForm/StatusForm'
 
 const TicketDetailPage: React.FC = () => {
     const {id} = useParams<{id: string}>()
@@ -30,14 +31,13 @@ const TicketDetailPage: React.FC = () => {
         }
     }, [])
 
-    console.log(ticket)
 
     if (isLoading) return <PageHeader>Loading...</PageHeader>
     if (error) return <PageHeader>Error: {error}</PageHeader>;
 
     return (
         <div>
-            <TicketDetailCard details={ticket}/>
+            <TicketDetailCard details={ticket} setTicket={setTicket}/>
         </div>
     )
 }

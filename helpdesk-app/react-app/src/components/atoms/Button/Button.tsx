@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       color={color}
       padding={padding}
-      bgColor={backgroundColor}
+      bgcolor={backgroundColor}
       fontSize={fontSize}
     >
       {children}

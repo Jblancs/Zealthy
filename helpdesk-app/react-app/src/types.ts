@@ -1,7 +1,7 @@
 export enum TicketStatus {
   New = 'new',
   InProgress = 'in-progress',
-  Complete = 'complete',
+  Complete = 'completed',
 }
 
 export interface Ticket {

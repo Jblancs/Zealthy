@@ -63,15 +63,3 @@ justify-content: center;
 margin-top: 10px;
 `
 
-export const SubmitButton = styled.button`
-border: 3px solid black;
-padding: 10px 40px;
-background-color: none;
-border-radius: 20px;
-cursor: pointer;
-transition: box-shadow 0.1s;
-&:hover {
-    box-shadow: 1px 2px 5px black;
-    transform: scale(1.02);
-  };
-`
