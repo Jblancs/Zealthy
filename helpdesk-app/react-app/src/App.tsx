@@ -18,8 +18,9 @@ const App: React.FC = () => {
       </S.SideNav>
       <S.MainPage>
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/ticket/:id" element={<AdminPage />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </S.MainPage>
     </S.AppContainer>

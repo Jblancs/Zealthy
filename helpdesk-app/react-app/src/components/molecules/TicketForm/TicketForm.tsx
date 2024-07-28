@@ -25,7 +25,6 @@ const TicketSchema = Yup.object().shape({
 const TicketForm: React.FC = () => {
 
   const handleSubmit = async (payload: FormValues, actions: any) => {
-    alert(JSON.stringify(payload))
     try {
       const res = await axios.post('/tickets/', payload)
       console.log('Ticket submitted successfully', res.data)

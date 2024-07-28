@@ -16,19 +16,17 @@ def create_ticket():
     db.session.add(new_ticket)
     db.session.commit()
 
-    # return jsonify({'message': 'Ticket created successfully'}), 201
     return jsonify(new_ticket.to_dict())
 
 @tickets_bp.route('/', methods=['GET'])
 def get_all_tickets():
-    tickets = Ticket.query.all()
-
+    tickets = Ticket.query.order_by(Ticket.id.desc()).all()
+    print(tickets)
     return jsonify([ticket.to_dict() for ticket in tickets])
 
 @tickets_bp.route('/<int:id>', methods=['GET'])
 def get_ticket_by_id(id):
     ticket = Ticket.query.get_or_404(id)
-
     return jsonify(ticket.to_dict())
 
 @tickets_bp.route('/<int:id>', methods=['PUT'])

@@ -8,7 +8,7 @@ export const TicketFormContainer = styled.div`
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   padding: 40px 20px;
-  width: 60%;
+  width: 70%;
   min-width: 500px;
 `
 export const Heading = styled.div`
@@ -72,6 +72,6 @@ cursor: pointer;
 transition: box-shadow 0.1s;
 &:hover {
     box-shadow: 1px 2px 5px black;
-    transform: scale(1.02); /* Add a slight zoom effect */
+    transform: scale(1.02);
   };
 `

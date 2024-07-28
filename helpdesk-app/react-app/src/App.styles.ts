@@ -26,7 +26,7 @@ export const NavList = styled.div`
   gap: 20px;
 `
 
-export const NavLink = styled(RouterNavLink)<{test: any}>`
+export const NavLink = styled(RouterNavLink)<{test: boolean}>`
 display: flex:
 justify-content: center;
 text-align: center;
