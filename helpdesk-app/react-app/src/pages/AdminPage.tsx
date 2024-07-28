@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../api/axios'
-import TicketSummaryCard, { TicketStatus } from '../components/molecules/TicketSummary/TicketSummaryCard';
-
-export interface Ticket {
-  id: number;
-  name: string;
-  email: string;
-  description: string;
-  status: TicketStatus;
-}
+import TicketSummaryCard from '../components/molecules/TicketSummary/TicketSummaryCard';
+import { Ticket } from '../types';
 
 const AdminPage: React.FC = () => {
   const [tickets, setTickets] = useState<Ticket[]>([])

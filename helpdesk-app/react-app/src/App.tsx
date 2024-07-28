@@ -3,6 +3,7 @@ import * as S from './App.styles'
 import { Route, Routes, useLocation  } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AdminPage from './pages/AdminPage'
+import TicketDetailPage from './pages/TicketDetailPage'
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -18,9 +19,9 @@ const App: React.FC = () => {
       </S.SideNav>
       <S.MainPage>
         <Routes>
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/ticket/:id" element={<AdminPage />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/ticket/:id" element={<TicketDetailPage />} />
         </Routes>
       </S.MainPage>
     </S.AppContainer>
