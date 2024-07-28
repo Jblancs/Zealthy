@@ -3,20 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import * as S from './TicketSummaryCard.styles'
 import { Ticket } from '../../../types'
 
-// export interface Ticket {
-//   id: number
-//   name: string
-//   email: string
-//   description: string
-//   status: TicketStatus
-// }
-
-// export enum TicketStatus {
-//   New = 'new',
-//   InProgress = 'in-progress',
-//   Complete = 'complete',
-// }
-
 const TicketSummaryCard: React.FC<{ details: Ticket }> = ({ details }) => {
   const navigate = useNavigate()
   const { id, description, name, status, email } = details

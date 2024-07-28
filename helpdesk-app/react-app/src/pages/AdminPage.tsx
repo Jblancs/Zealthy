@@ -9,20 +9,20 @@ const AdminPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
 
 
-  const fetchTickets = async () => {
-      setIsLoading(true)
-      try {
-          const res = await axios.get<Ticket[]>('/tickets/');
-          console.log(res.data)
-          setTickets(res.data)
-        } catch (err) {
-          setError(err instanceof Error ? err.message : 'An unknown error occurred')
-      } finally {
-        setIsLoading(false)
-      }
-  }
 
   useEffect(() => {
+    const fetchTickets = async () => {
+        setIsLoading(true)
+        try {
+            const res = await axios.get<Ticket[]>('/tickets/');
+            console.log(res.data)
+            setTickets(res.data)
+          } catch (err) {
+            setError(err instanceof Error ? err.message : 'An unknown error occurred')
+        } finally {
+          setIsLoading(false)
+        }
+    }
     fetchTickets();
 
     return () => {
