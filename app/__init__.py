@@ -10,28 +10,28 @@ import os
 
 def create_app():
     app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
-    app.config.from_object(Config)
+    # app.config.from_object(Config)
     CORS(app)
 
-    db.init_app(app)
-    migrate.init_app(app, db)
+    # db.init_app(app)
+    # migrate.init_app(app, db)
     configure_logging(app)
 
-    app.logger.info(f'Database URL: {app.config["SQLALCHEMY_DATABASE_URI"]}')
+    # app.logger.info(f'Database URL: {app.config["SQLALCHEMY_DATABASE_URI"]}')
 
     from .api.ticket_routes import tickets_bp
     from .api.comment_routes import comments_bp
     app.register_blueprint(tickets_bp, url_prefix='/tickets')
     app.register_blueprint(comments_bp, url_prefix='/comments')
 
-    app.logger.info('Application startup')
-    try:
-        app.logger.info('Attempting to connect to the database...')
-        with app.app_context():
-            db.session.execute(text('SELECT 1'))
-        app.logger.info('Database connection successful')
-    except Exception as e:
-        app.logger.error('Database connection failed', exc_info=True)
+    # app.logger.info('Application startup')
+    # try:
+    #     app.logger.info('Attempting to connect to the database...')
+    #     with app.app_context():
+            # db.session.execute(text('SELECT 1'))
+        # app.logger.info('Database connection successful')
+    # except Exception as e:
+    #     app.logger.error('Database connection failed', exc_info=True)
 
     @app.route('/')
     def index():
