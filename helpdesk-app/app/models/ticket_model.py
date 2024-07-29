@@ -1,7 +1,13 @@
 from ..extensions import db
 from datetime import datetime
+from ..extensions import environment, SCHEMA
 
 class Ticket(db.Model):
+    __tablename__ = 'Tickets'
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
