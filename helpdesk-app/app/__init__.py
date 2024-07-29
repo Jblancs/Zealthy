@@ -16,7 +16,7 @@ def create_app():
     from .api.comment_routes import comments_bp
     app.register_blueprint(tickets_bp, url_prefix='/tickets')
     app.register_blueprint(comments_bp, url_prefix='/comments')
-
+    
     @app.route('/')
     def index():
         return app.send_static_file('index.html')
