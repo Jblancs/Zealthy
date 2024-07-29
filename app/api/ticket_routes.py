@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from ..models import Ticket
-from ..extensions import db
+from .. import db
 
 tickets_bp = Blueprint('tickets', __name__)
 
