@@ -4,7 +4,7 @@ from ..extensions import db
 
 comments_bp = Blueprint('comments_bp', __name__)
 
-@comments_bp.route('/tickets/<int:ticket_id>/comments', methods=['POST'])
+@comments_bp.route('/tickets/<int:ticket_id>', methods=['POST'])
 def add_comment(ticket_id):
     data = request.get_json()
 
@@ -19,7 +19,7 @@ def add_comment(ticket_id):
     db.session.commit()
     return jsonify(comment.to_dict(), 201)
 
-@comments_bp.route('/tickets/<int:ticket_id>/comments', methods=['GET'])
+@comments_bp.route('/tickets/<int:ticket_id>', methods=['GET'])
 def get_comments(ticket_id):
     comments = Comment.query.filter_by(ticket_id=ticket_id).order_by(Comment.id.desc()).all()
     return jsonify([comment.to_dict() for comment in comments]), 200

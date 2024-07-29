@@ -16,7 +16,6 @@ const AdminPage: React.FC = () => {
         setIsLoading(true)
         try {
             const res = await axios.get<Ticket[]>('/tickets/');
-            console.log(res.data)
             setTickets(res.data)
           } catch (err) {
             setError(err instanceof Error ? err.message : 'An unknown error occurred')

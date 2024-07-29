@@ -25,9 +25,6 @@ const StatusForm: React.FC<StatusFormProps> = ({
         status: currentStatus
     }
 
-    console.log('currentStatus:', currentStatus)
-    console.log('initial', initialValues)
-
     const handleSubmit = async (payload: FormValues, actions: FormikHelpers<FormValues>) => {
         try {
             const res = await axios.put(`/tickets/${ticketId}`, payload)

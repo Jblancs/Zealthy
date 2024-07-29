@@ -4,13 +4,13 @@ import axios from '../api/axios'
 import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
 import { Ticket } from '../types'
 import PageHeader from '../components/atoms/PageHeader/PageHeader'
+import CommentForm from '../components/molecules/CommentForm/CommentForm'
 
 const TicketDetailPage: React.FC = () => {
     const {id} = useParams<{id: string}>()
     const [ticket, setTicket] = useState<Ticket | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
-
 
     useEffect(() => {
         const fetchTicket = async () => {
@@ -33,10 +33,15 @@ const TicketDetailPage: React.FC = () => {
 
     if (isLoading) return <PageHeader>Loading...</PageHeader>
     if (error) return <PageHeader>Error: {error}</PageHeader>;
+    if (!id) {
+        return <PageHeader>Error: Invalid ticket ID</PageHeader>;
+    }
 
     return (
         <div>
             <TicketDetailCard details={ticket} setTicket={setTicket}/>
+            <div>Comments</div>
+            <CommentForm ticketId={id}/>
         </div>
     )
 }
