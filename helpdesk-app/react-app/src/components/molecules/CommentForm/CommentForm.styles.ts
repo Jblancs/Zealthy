@@ -4,7 +4,7 @@ import { Field } from 'formik';
 export const FormContainer = styled.div`
 display: flex;
 min-width 1000px;
-padding: 30px 0;
+padding: 10px 0;
 `
 
 export const FormComponent = styled.form`
@@ -17,7 +17,7 @@ width: 80%;
 export const FieldElement = styled(Field)`
 border: none;
 border-bottom: 1px solid #bfbfbf;
-width: 95%;
+width: 98%;
 font-size: 20px;
 padding: 20px;
 margin-left: 20px;

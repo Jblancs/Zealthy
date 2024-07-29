@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   display: flex;
   min-width: 1000px;
+  width: 100%;
   border-bottom: 1px solid #bfbfbf;
   transition: background-color 0.3s;
   &:hover {
@@ -18,8 +19,6 @@ export const CardSection = styled.div`
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `
 
 export const IdSection = styled(CardSection)`

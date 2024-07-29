@@ -6,6 +6,7 @@ import Button from '../../atoms/Button/Button'
 
 interface CommentProps {
     ticketId: string
+    fetchTicket: () => Promise<void>
 }
 
 interface CommentFormValues {
@@ -13,7 +14,8 @@ interface CommentFormValues {
 }
 
 const CommentForm: React.FC<CommentProps> = ({
-    ticketId
+    ticketId,
+    fetchTicket
 }) => {
     const initialValues: CommentFormValues = {
         content: '',
@@ -24,6 +26,7 @@ const CommentForm: React.FC<CommentProps> = ({
             const res = await axios.post(`/comments/tickets/${ticketId}`, payload)
             console.log('“Would normally send email here with body: ...”', res.data)
             actions.resetForm()
+            await fetchTicket()
           } catch (error) {
             console.error('Error submitting ticket: ', error)
           } finally {

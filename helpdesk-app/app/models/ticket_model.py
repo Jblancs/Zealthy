@@ -24,6 +24,7 @@ class Ticket(db.Model):
         }
 
     def to_dict_with_comments(self):
+        comments_sorted = sorted(self.comments, key=lambda comment: comment.id, reverse=True)
         return {
             'id': self.id,
             'name': self.name,
@@ -32,5 +33,5 @@ class Ticket(db.Model):
             'status': self.status,
             'created_at': self.created_at.isoformat(),
             'updated_at': self.updated_at.isoformat(),
-            'comments': [comment.to_dict() for comment in self.comments]
+            'comments': [comment.to_dict() for comment in comments_sorted]
         }
