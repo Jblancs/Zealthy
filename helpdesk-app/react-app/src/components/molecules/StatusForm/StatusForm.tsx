@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik'
+import { Formik, Form, Field, FormikProps, FormikHelpers } from 'formik'
 import * as S from './StatusForm.styles'
 import axios from '../../../api/axios'
 import Button from "../../atoms/Button/Button";
@@ -28,7 +28,7 @@ const StatusForm: React.FC<StatusFormProps> = ({
     console.log('currentStatus:', currentStatus)
     console.log('initial', initialValues)
 
-    const handleSubmit = async (payload: FormValues, actions: any) => {
+    const handleSubmit = async (payload: FormValues, actions: FormikHelpers<FormValues>) => {
         try {
             const res = await axios.put(`/tickets/${ticketId}`, payload)
             setTicket(res.data)

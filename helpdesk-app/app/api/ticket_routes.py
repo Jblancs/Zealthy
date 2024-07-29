@@ -27,7 +27,7 @@ def get_all_tickets():
 @tickets_bp.route('/<int:id>', methods=['GET'])
 def get_ticket_by_id(id):
     ticket = Ticket.query.get_or_404(id)
-    return jsonify(ticket.to_dict())
+    return jsonify(ticket.to_dict_with_comments())
 
 @tickets_bp.route('/<int:id>', methods=['PUT'])
 def update_status(id):

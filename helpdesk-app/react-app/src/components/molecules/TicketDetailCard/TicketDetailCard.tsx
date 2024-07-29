@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './TicketDetail.styles'
-import { Ticket, TicketStatus } from '../../../types'
+import { Ticket } from '../../../types'
 import PageHeader from '../../atoms/PageHeader/PageHeader'
 import StatusForm from '../StatusForm/StatusForm'
 

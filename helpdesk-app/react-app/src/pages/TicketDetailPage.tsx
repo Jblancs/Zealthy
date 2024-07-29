@@ -4,7 +4,6 @@ import axios from '../api/axios'
 import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
 import { Ticket } from '../types'
 import PageHeader from '../components/atoms/PageHeader/PageHeader'
-import StatusForm from '../components/molecules/StatusForm/StatusForm'
 
 const TicketDetailPage: React.FC = () => {
     const {id} = useParams<{id: string}>()

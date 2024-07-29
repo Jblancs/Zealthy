@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage, FormikProps } from 'formik'
+import { Formik, Form, Field, ErrorMessage, FormikProps, FormikHelpers } from 'formik'
 import * as S from './TicketForm.styles'
 import * as Yup from 'yup'
 import axios from '../../../api/axios'
@@ -25,7 +25,7 @@ const TicketSchema = Yup.object().shape({
 
 const TicketForm: React.FC = () => {
 
-  const handleSubmit = async (payload: FormValues, actions: any) => {
+  const handleSubmit = async (payload: FormValues, actions: FormikHelpers<FormValues>) => {
     try {
       const res = await axios.post('/tickets/', payload)
       console.log('Ticket submitted successfully', res.data)
