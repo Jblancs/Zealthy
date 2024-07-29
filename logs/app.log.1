@@ -1,0 +1,103 @@
+2024-07-29 18:34:26,443 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:31]
+2024-07-29 18:34:26,457 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:49]
+2024-07-29 18:34:26,976 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:31]
+2024-07-29 18:34:26,985 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:49]
+2024-07-29 18:34:55,831 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:34:55,842 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:35:15,446 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:35:15,457 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:36:07,568 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:36:07,589 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:37:01,520 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:37:01,520 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:37:01,529 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:42:06,384 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:42:06,384 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:42:06,393 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:42:10,927 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:42:10,927 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:42:10,935 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:42:17,515 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:59]
+2024-07-29 18:42:17,515 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:42:17,522 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:53:07,954 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:66]
+2024-07-29 18:53:07,955 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:53:07,971 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:53:07,971 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:28]
+2024-07-29 18:53:07,972 ERROR: Database connection failed [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:33]
+Traceback (most recent call last):
+  File "/home/jblancaflor/take-home-proj/zealthy/app/__init__.py", line 30, in create_app
+    db.session.execute('SELECT 1')
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py", line 778, in execute
+    return self._proxied.execute(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2134, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2024-07-29 18:54:10,794 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:66]
+2024-07-29 18:54:10,795 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:54:10,806 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:54:10,806 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:28]
+2024-07-29 18:54:10,807 ERROR: Database connection failed [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:33]
+Traceback (most recent call last):
+  File "/home/jblancaflor/take-home-proj/zealthy/app/__init__.py", line 30, in create_app
+    db.session.execute('SELECT 1')
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py", line 778, in execute
+    return self._proxied.execute(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2134, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2024-07-29 18:54:11,299 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:66]
+2024-07-29 18:54:11,300 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:54:11,310 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:54:11,310 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:28]
+2024-07-29 18:54:11,311 ERROR: Database connection failed [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:33]
+Traceback (most recent call last):
+  File "/home/jblancaflor/take-home-proj/zealthy/app/__init__.py", line 30, in create_app
+    db.session.execute('SELECT 1')
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py", line 778, in execute
+    return self._proxied.execute(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2134, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "/home/jblancaflor/take-home-proj/zealthy/.venv/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2024-07-29 18:56:52,615 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:66]
+2024-07-29 18:56:52,615 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:56:52,628 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]
+2024-07-29 18:56:52,628 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:28]
+2024-07-29 18:56:52,628 ERROR: Database connection failed [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:33]
+Traceback (most recent call last):
+  File "/home/jblancaflor/take-home-proj/zealthy/app/__init__.py", line 30, in create_app
+    db.session.execute(text('SELECT 1'))
+NameError: name 'text' is not defined
+2024-07-29 18:56:53,143 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:66]
+2024-07-29 18:56:53,144 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:19]
+2024-07-29 18:56:53,154 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:26]

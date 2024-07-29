@@ -1,0 +1,11 @@
+2024-07-29 18:56:53,154 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:28]
+2024-07-29 18:56:53,154 ERROR: Database connection failed [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:33]
+Traceback (most recent call last):
+  File "/home/jblancaflor/take-home-proj/zealthy/app/__init__.py", line 30, in create_app
+    db.session.execute(text('SELECT 1'))
+NameError: name 'text' is not defined
+2024-07-29 18:57:29,957 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:67]
+2024-07-29 18:57:29,958 INFO: Database URL: sqlite:///dev.db [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:20]
+2024-07-29 18:57:29,967 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:27]
+2024-07-29 18:57:29,967 INFO: Attempting to connect to the database... [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:29]
+2024-07-29 18:57:29,976 INFO: Database connection successful [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
