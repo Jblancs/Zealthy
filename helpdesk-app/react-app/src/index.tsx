@@ -7,11 +7,6 @@ import {
   BrowserRouter,
 } from 'react-router-dom'
 
-if (process.env.NODE_ENV === 'development') {
-  import('./mocks/browser').then(({ worker }) => {
-    worker.start();
-  });
-}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 

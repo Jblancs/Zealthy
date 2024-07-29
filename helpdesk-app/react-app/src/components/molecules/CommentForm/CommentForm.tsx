@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './CommentForm.styles'
-import { Formik, Form, Field, ErrorMessage, FormikProps, FormikHelpers  } from 'formik'
+import { Formik, Form, FormikProps, FormikHelpers  } from 'formik'
 import axios from '../../../api/axios'
 import Button from '../../atoms/Button/Button'
 
@@ -41,7 +41,7 @@ const CommentForm: React.FC<CommentProps> = ({
             >
                 {({ isSubmitting, dirty }: FormikProps<CommentFormValues>) => {
                     return (
-                        <S.FormComponent>
+                        <S.FormComponent as={Form}>
                             <S.FieldElement
                             name='content'
                             placeholder='Add a comment...'

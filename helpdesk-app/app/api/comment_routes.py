@@ -8,9 +8,6 @@ comments_bp = Blueprint('comments_bp', __name__)
 def add_comment(ticket_id):
     data = request.get_json()
 
-    if not data['content']:
-        return jsonify({"error": "Content is required"}), 400
-
     comment = Comment(
         ticket_id=ticket_id,
         content=data['content']
