@@ -54,9 +54,9 @@ const StatusForm: React.FC<StatusFormProps> = ({
                     return (
                         <S.FormComponent as={Form}>
                             <Field as='select' name='status' >
-                                <option value={TicketStatus.New}>new</option>
-                                <option value={TicketStatus.InProgress}>in progress</option>
-                                <option value={TicketStatus.Complete}>completed</option>
+                                <option value={'new'}>new</option>
+                                <option value={'in-progress'}>in progress</option>
+                                <option value={'completed'}>completed</option>
                             </Field>
                             {values.status !== currentStatus && (<Button padding="0px 10px" disabled={isSubmitting}>Save Changes</Button>)}
                         </S.FormComponent>

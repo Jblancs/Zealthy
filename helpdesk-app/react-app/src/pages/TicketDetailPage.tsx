@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
@@ -15,27 +15,26 @@ const TicketDetailPage: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
-    const fetchTicket = async () => {
-        try {
-            const res = await axios.get<Ticket>(`/tickets/${id}`)
-            setTicket(res.data)
-          } catch (err) {
-            setError(err instanceof Error ? err.message : 'An unknown error occurred')
-        } finally {
-          setIsLoading(false)
-        }
-    }
+    const fetchTicket = useCallback(
 
-    const fetchComments = async () => {
-        try {
-            const res = await axios.get<Comment[]>(`/comments/tickets/${id}`);
-            setComments(res.data)
-          } catch (err) {
-            setError(err instanceof Error ? err.message : 'An unknown error occurred')
-        } finally {
-          setIsLoading(false)
-        }
-    }
+        async () => {
+            try {
+                const res = await axios.get<Ticket>(`/tickets/${id}`)
+                setTicket(res.data)
+              } catch (err) {
+                setError(err instanceof Error ? err.message : 'An unknown error occurred')
+            }
+        }, [id])
+
+    const fetchComments = useCallback(
+        async () => {
+            try {
+                const res = await axios.get<Comment[]>(`/comments/tickets/${id}`);
+                setComments(res.data)
+              } catch (err) {
+                setError(err instanceof Error ? err.message : 'An unknown error occurred')
+            }
+        }, [id])
 
     useEffect(() => {
         const fetchData = () => {
@@ -49,7 +48,7 @@ const TicketDetailPage: React.FC = () => {
             setTicket(null)
             setComments([])
         }
-    }, [])
+    }, [fetchTicket, fetchComments])
 
     if (isLoading || !ticket) return <PageHeader>Loading...</PageHeader>
 
