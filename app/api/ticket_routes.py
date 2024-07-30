@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 from ..models import Ticket
 from .. import db
 
@@ -36,5 +36,6 @@ def update_status(id):
 
     ticket.status = data['status']
     db.session.commit()
+    current_app.logger.info('Would normally send email here with body: ...')
 
     return jsonify(ticket.to_dict())

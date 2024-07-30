@@ -39,14 +39,15 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 configure_logging(app)
 
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+CORS(app)
+
 from .api.ticket_routes import tickets_bp
 from .api.comment_routes import comments_bp
 app.register_blueprint(tickets_bp, url_prefix='/tickets')
 app.register_blueprint(comments_bp, url_prefix='/comments')
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-CORS(app)
 
 @app.route('/<path:path>', methods=['GET'])
 def serve_react_app(path):
