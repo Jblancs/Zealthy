@@ -34,3 +34,6 @@ NameError: name 'text' is not defined
 2024-07-29 19:46:10,103 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
 2024-07-29 19:46:13,842 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
 2024-07-29 19:49:24,031 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
+2024-07-29 21:13:04,803 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
+2024-07-29 21:15:38,014 INFO: Application startup [in /home/jblancaflor/take-home-proj/zealthy/app/__init__.py:32]
+2024-07-29 21:21:08,637 INFO: Would normally send email here with body: ... [in /home/jblancaflor/take-home-proj/zealthy/app/api/ticket_routes.py:39]

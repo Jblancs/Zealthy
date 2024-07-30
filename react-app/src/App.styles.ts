@@ -7,6 +7,7 @@ export const AppContainer = styled.div`
 
 export const SideNav = styled.nav`
   width: 200px;
+  min-width: 200px;
   height: 100vh;
   background-color: tan;
   padding: 20px;
