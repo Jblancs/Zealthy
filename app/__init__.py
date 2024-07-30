@@ -51,29 +51,16 @@ from .api.comment_routes import comments_bp
 app.register_blueprint(tickets_bp, url_prefix='/tickets')
 app.register_blueprint(comments_bp, url_prefix='/comments')
 
-@app.route('/<path:path>')
-def serve_static_file(path):
-    return send_from_directory(app.static_folder, path)
+@app.route('/<path:path>', methods=['GET'])
+def serve_react_app(path):
+    if os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def serve_index():
     return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# app.logger.info('Application startup')
-# try:
-#     app.logger.info('Attempting to connect to the database...')
-#     with app.app_context():
-        # db.session.execute(text('SELECT 1'))
-    # app.logger.info('Database connection successful')
-# except Exception as e:
-#     app.logger.error('Database connection failed', exc_info=True)
-
-# @app.route('/')
-# def index():
-#     return app.send_static_file('index.html')
-
-# with app.app_context():
-#     from . import models
