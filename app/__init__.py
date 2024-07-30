@@ -33,23 +33,20 @@ def configure_logging(app):
 
 # ---------------------------------------------------------------------------
 
-app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
-# app.config.from_object(Config)
+app = Flask(__name__, static_folder='../react-app/build')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-CORS(app)
-
 configure_logging(app)
-
-# app.logger.info(f'Database URL: {app.config["SQLALCHEMY_DATABASE_URI"]}')
 
 from .api.ticket_routes import tickets_bp
 from .api.comment_routes import comments_bp
 app.register_blueprint(tickets_bp, url_prefix='/tickets')
 app.register_blueprint(comments_bp, url_prefix='/comments')
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+CORS(app)
 
 @app.route('/<path:path>', methods=['GET'])
 def serve_react_app(path):
