@@ -13,6 +13,6 @@ services:
         value: production
       - key: DATABASE_URL
         fromDatabase:
-          name: your-database-name
+          name: zealthy-db
           property: connectionString
     staticPublishPath: react-app/build
