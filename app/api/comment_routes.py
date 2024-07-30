@@ -21,7 +21,7 @@ def get_comments(ticket_id):
     comments = Comment.query.filter_by(ticket_id=ticket_id).order_by(Comment.id.desc()).all()
     return jsonify([comment.to_dict() for comment in comments]), 200
 
-@comments_bp.route('/comments/<int:comment_id>', methods=['DELETE'])
+@comments_bp.route('/<int:comment_id>', methods=['DELETE'])
 def delete_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     db.session.delete(comment)
