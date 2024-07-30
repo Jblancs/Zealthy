@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 from sqlalchemy import text
 from flask_sqlalchemy import SQLAlchemy
@@ -36,12 +36,12 @@ def configure_logging(app):
 app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 # app.config.from_object(Config)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 CORS(app)
 
-# db.init_app(app)
-# migrate.init_app(app, db)
 configure_logging(app)
 
 # app.logger.info(f'Database URL: {app.config["SQLALCHEMY_DATABASE_URI"]}')
@@ -51,9 +51,13 @@ from .api.comment_routes import comments_bp
 app.register_blueprint(tickets_bp, url_prefix='/tickets')
 app.register_blueprint(comments_bp, url_prefix='/comments')
 
+@app.route('/<path:path>')
+def serve_static_file(path):
+    return send_from_directory(app.static_folder, path)
+
 @app.route('/')
-def index():
-    return 'Hello, World!'
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
