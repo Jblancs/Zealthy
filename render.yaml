@@ -3,9 +3,11 @@ services:
     name: zealthy
     env: python
     buildCommand:
-      - cd react-app && npm install && npm run build && cd ..
+      - npm install --prefix react-app && npm run build --prefix react-app
       - pip install -r requirements.txt
-    startCommand: flask run
+      - pip install psycopg2
+      - flask db upgrade
+    startCommand: gunicorn app:app
     envVars:
       - key: FLASK_ENV
         value: production
