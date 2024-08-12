@@ -1,0 +1,10 @@
+.status-form-container {
+  display: flex;
+  font-size: 25px;
+  gap: 10px;
+}
+
+.status-form-element {
+  display: flex;
+  gap: 10px;
+}

@@ -1,9 +1,10 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage, FormikProps, FormikHelpers } from 'formik'
+import { Formik, Form, Field, ErrorMessage, FormikProps, FormikHelpers, } from 'formik'
 import * as S from './TicketForm.styles'
 import * as Yup from 'yup'
-import axios from '../../../api/axios'
-import Button from '../../atoms/Button/Button'
+import axios from '@api/axios'
+import Button from '@components/atoms/Button/Button'
+import './TicketForm.css'
 
 interface FormValues {
   name: string
@@ -18,9 +19,9 @@ const initialValues: FormValues = {
 }
 
 const TicketSchema = Yup.object().shape({
-  name: Yup.string().required('Required'),
-  email: Yup.string().email('Invalid email address').required('Required'),
-  description: Yup.string().required('Required'),
+  name: Yup.string().required('Required').max(30, 'Name must be 30 characters or less'),
+  email: Yup.string().email('Invalid email address').required('Required').max(30, 'Email must be 30 characters or less'),
+  description: Yup.string().required('Required').max(1000, 'Description must be 1000 characters or less'),
 })
 
 const TicketForm: React.FC = () => {
@@ -38,8 +39,8 @@ const TicketForm: React.FC = () => {
   }
 
   return (
-    <S.TicketFormContainer>
-      <S.Heading>Support Ticket Request Form</S.Heading>
+    <div className='ticket-form-container'>
+      <div className='ticket-form-heading'>Ticket Request Form</div>
       <Formik
         initialValues={initialValues}
         validationSchema={TicketSchema}
@@ -47,56 +48,53 @@ const TicketForm: React.FC = () => {
           handleSubmit(values, actions)
         }}
       >
-        {({ isValid, isSubmitting, touched }: FormikProps<FormValues>) => {
-          const allFieldsTouched = Object.keys(initialValues).every(
-            (key) => touched[key as keyof FormValues]
-          )
+        {({ isSubmitting }: FormikProps<FormValues>) => {
           return (
-            <S.FormComponent as={Form}>
-              <S.FormSectionContainer>
-                <S.LabelContainer>
-                  <S.Label htmlFor="name">Name:</S.Label>
-                  <ErrorMessage name="name" component={S.ErrorMsg} />
-                </S.LabelContainer>
-                <Field name="name" placeholder="Name" as={S.InputField} />
-              </S.FormSectionContainer>
-              <S.FormSectionContainer>
-                <S.LabelContainer>
-                  <S.Label htmlFor="email">Email Address:</S.Label>
-                  <ErrorMessage name="email" component={S.ErrorMsg} />
-                </S.LabelContainer>
+            <Form className='ticket-form-element'>
+              <div className='ticket-form-section-container'>
+                <div className='ticket-form-label-container'>
+                  <label className='ticket-form-label' htmlFor="name">Name:</label>
+                  <ErrorMessage className='ticket-form-error-msg' name="name" component='div' />
+                </div>
+                <Field name="name" placeholder="Name" className='ticket-form-input-field'/>
+              </div>
+              <div className='ticket-form-section-container'>
+                <div className='ticket-form-label-container'>
+                  <label className='ticket-form-label' htmlFor="email">Email Address:</label>
+                  <ErrorMessage className='ticket-form-error-msg' name="email" component='div' />
+                </div>
                 <Field
                   name="email"
                   type="email"
                   placeholder="Email"
-                  as={S.InputField}
+                  className='ticket-form-input-field'
                 />
-              </S.FormSectionContainer>
-              <S.FormSectionContainer>
-                <S.LabelContainer>
-                  <S.Label htmlFor="description">Description:</S.Label>
-                  <ErrorMessage name="description" component={S.ErrorMsg} />
-                </S.LabelContainer>
+              </div>
+              <div className='ticket-form-section-container'>
+                <div className='ticket-form-label-container'>
+                  <label className='ticket-form-label' htmlFor="description">Description:</label>
+                  <ErrorMessage className='ticket-form-error-msg' name="description" component='div' />
+                </div>
                 <Field
                   name="description"
                   placeholder="Enter description here"
                   as={S.TextareaField}
+                  className='ticket-form-textarea-field'
                 />
-              </S.FormSectionContainer>
-              <S.ButtonContainer>
+              </div>
+              <div className='ticket-form-btn-container'>
                 <Button
-                  disabled={!isValid || isSubmitting || !allFieldsTouched}
                   fontSize='18px'
                   padding='5px 20px'
                 >
                   Submit
                 </Button>
-              </S.ButtonContainer>
-            </S.FormComponent>
+              </div>
+            </Form>
           )
         }}
       </Formik>
-    </S.TicketFormContainer>
+    </div>
   )
 }
 

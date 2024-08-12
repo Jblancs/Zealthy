@@ -1,7 +1,7 @@
 import React from 'react'
-import { Ticket } from '../../../types'
+import { Ticket } from '@types'
 import PageHeader from '@components/atoms/PageHeader/PageHeader'
-import StatusForm from '../StatusForm/StatusForm'
+import StatusForm from '@components/molecules/StatusForm/StatusForm'
 import './TicketDetailCard.css'
 
 

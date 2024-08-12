@@ -1,0 +1,33 @@
+.comment-form-container {
+  display: flex;
+  padding: 10px 0;
+  min-width: 400px;
+}
+
+.comment-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+
+.comment-form-field {
+  border: none;
+  border-bottom: 1px solid var(--border-gray);
+  width: 98%;
+  font-size: 20px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.comment-form-btn-container {
+  display: flex;
+  margin-left: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px
+}
+
+.comment-form-error-msg {
+  color: red;
+}

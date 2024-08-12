@@ -1,0 +1,16 @@
+.comment-card-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.comment-date-section {
+  font-size: 14px;
+  color: var(--date-text-color)
+}
+
+.comment-content-section {
+    font-size: 18px;
+}

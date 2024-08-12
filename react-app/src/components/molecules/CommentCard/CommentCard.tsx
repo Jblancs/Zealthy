@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from './CommentCard.styles'
-import { formatDate } from "../../../utils";
+import { formatDate } from "@utils";
+import './CommentCard.css'
 
 interface CommentCardProps {
     content: string,
@@ -12,14 +12,14 @@ const CommentCard: React.FC<CommentCardProps> = ({
     created_at
 }) => {
     return (
-        <S.CommentCardContainer>
-            <S.DateSection>
+        <div className='comment-card-container'>
+            <div className='comment-date-section'>
                 {formatDate(created_at)}
-            </S.DateSection>
-            <S.ContentSection>
+            </div>
+            <div className='comment-content-section'>
                 {content}
-            </S.ContentSection>
-        </S.CommentCardContainer>
+            </div>
+        </div>
     )
 }
 

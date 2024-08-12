@@ -1,10 +1,10 @@
 import React from "react";
 import { Formik, Form, Field, FormikProps, FormikHelpers } from 'formik'
-import * as S from './StatusForm.styles'
-import axios from '../../../api/axios'
-import Button from "../../atoms/Button/Button";
-import { TicketStatus } from "../../../types";
-import { Ticket } from "../../../types";
+import axios from '@api/axios'
+import Button from "@components/atoms/Button/Button";
+import { TicketStatus, Ticket } from "@types";
+import '@styles/App.css'
+import './StatusForm.css'
 
 interface StatusFormProps {
     currentStatus: TicketStatus
@@ -29,6 +29,7 @@ const StatusForm: React.FC<StatusFormProps> = ({
         try {
             const res = await axios.put(`/tickets/${ticketId}`, payload)
             setTicket(res.data)
+            
             console.log('Ticket updated successfully', res.data)
             actions.resetForm()
           } catch (error) {
@@ -39,10 +40,10 @@ const StatusForm: React.FC<StatusFormProps> = ({
     }
 
     return (
-        <S.StatusFormContainer>
-            <S.StatusHeading>
+        <div className='status-form-container'>
+            <div className="bold">
                 Status:
-            </S.StatusHeading>
+            </div>
             <Formik
             initialValues={initialValues}
             enableReinitialize={true}
@@ -52,18 +53,18 @@ const StatusForm: React.FC<StatusFormProps> = ({
             >
                 {({isSubmitting, values}: FormikProps<FormValues>) => {
                     return (
-                        <S.FormComponent as={Form}>
+                        <Form className='status-form-element'>
                             <Field as='select' name='status' >
                                 <option value={'new'}>new</option>
                                 <option value={'in-progress'}>in progress</option>
                                 <option value={'completed'}>completed</option>
                             </Field>
                             {values.status !== currentStatus && (<Button padding="0px 10px" disabled={isSubmitting}>Save Changes</Button>)}
-                        </S.FormComponent>
+                        </Form>
                     )
                 }}
             </Formik>
-        </S.StatusFormContainer>
+        </div>
     )
 }
 

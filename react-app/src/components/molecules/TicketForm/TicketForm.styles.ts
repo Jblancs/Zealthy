@@ -18,7 +18,7 @@ export const Heading = styled.div`
 `
 
 export const FormComponent = styled.form`
-display: flex:
+display: flex;
 flex-direction: column;
 min-width: 400px;
 `
