@@ -3,7 +3,7 @@ import TicketForm from '../components/molecules/TicketForm/TicketForm';
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <div className='homepage-container'>
       <TicketForm />
     </div>
   );

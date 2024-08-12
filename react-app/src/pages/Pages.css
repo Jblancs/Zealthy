@@ -16,3 +16,8 @@
 .admin-page-div {
   min-width: 400px;
 }
+
+.homepage-container {
+  display: flex;
+  justify-content: center;
+}

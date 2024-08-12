@@ -78,6 +78,7 @@ const TicketForm: React.FC = () => {
                   name="description"
                   placeholder="Enter description here"
                   className='ticket-form-textarea-field'
+                  as="textarea"
                 />
               </div>
               <div className='ticket-form-btn-container'>
