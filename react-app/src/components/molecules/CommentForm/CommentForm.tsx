@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Formik,
-  Form,
-  FormikProps,
-  FormikHelpers,
-  Field,
-  ErrorMessage,
-} from 'formik'
+import { Formik, Form, FormikHelpers, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from '@api/axios'
 import Button from '@components/atoms/Button/Button'
@@ -37,11 +30,10 @@ const CommentForm: React.FC<CommentProps> = ({ ticketId, fetchTicket }) => {
     actions: FormikHelpers<CommentFormValues>
   ) => {
     try {
-      const res = await axios.post(`/comments/tickets/${ticketId}`, payload)
+      await axios.post(`/comments/tickets/${ticketId}`, payload)
       actions.resetForm()
       alert('Comment submission successful!')
       await fetchTicket()
-
     } catch (error) {
       console.error('Error posting comment: ', error)
     } finally {
@@ -58,7 +50,7 @@ const CommentForm: React.FC<CommentProps> = ({ ticketId, fetchTicket }) => {
           handleSubmit(values, actions)
         }}
       >
-        {({ isSubmitting }: FormikProps<CommentFormValues>) => {
+        {() => {
           return (
             <Form className="comment-form-element">
               <Field
