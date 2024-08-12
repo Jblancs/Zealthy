@@ -6,8 +6,7 @@
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   padding: 40px 20px;
-  width: 70%;
-  min-width: 500px;
+  min-width: 400px;
 }
 
 .ticket-form-heading {

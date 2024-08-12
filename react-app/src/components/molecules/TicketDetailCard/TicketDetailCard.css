@@ -33,7 +33,7 @@
   padding: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .detail-creator-section,
   .detail-creator-container {
     flex-direction: column;

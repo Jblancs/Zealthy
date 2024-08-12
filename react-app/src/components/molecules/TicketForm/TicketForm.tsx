@@ -1,6 +1,5 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage, FormikProps, FormikHelpers, } from 'formik'
-import * as S from './TicketForm.styles'
 import * as Yup from 'yup'
 import axios from '@api/axios'
 import Button from '@components/atoms/Button/Button'
@@ -78,7 +77,6 @@ const TicketForm: React.FC = () => {
                 <Field
                   name="description"
                   placeholder="Enter description here"
-                  as={S.TextareaField}
                   className='ticket-form-textarea-field'
                 />
               </div>

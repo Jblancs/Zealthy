@@ -45,7 +45,7 @@ const AdminPage: React.FC = () => {
   )
 
   return (
-    <div>
+    <div className='admin-page-div'>
       <PageHeader>Tickets List</PageHeader>
       {ticketList}
     </div>
