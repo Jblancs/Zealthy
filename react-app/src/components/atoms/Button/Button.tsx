@@ -1,5 +1,5 @@
 import React from 'react'
-import * as S from './Button.styles'
+import './Button.css'
 
 interface ButtonProps {
   children: React.ReactNode
@@ -14,23 +14,29 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   onClick,
   children,
-  color = 'black',
   disabled = false,
+  color = 'black',
   padding = '2px 10px',
   backgroundColor = '#99ccff',
   fontSize = '12px'
 }) => {
+
+  const style = {
+    color: color || 'black',
+    padding: padding || '2px 10px',
+    backgroundColor: disabled ? '#bfbfbf' : backgroundColor,
+    fontSize: fontSize || '12px',
+  };
+
   return (
-    <S.Button
+    <button
       onClick={onClick}
       disabled={disabled}
-      color={color}
-      padding={padding}
-      bgcolor={backgroundColor}
-      fontSize={fontSize}
+      style={style}
+      className='button-atom'
     >
       {children}
-    </S.Button>
+    </button>
   )
 }
 

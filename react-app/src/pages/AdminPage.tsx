@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import axios from '../api/axios'
-import TicketSummaryCard from '../components/molecules/TicketSummary/TicketSummaryCard';
-import PageHeader from '../components/atoms/PageHeader/PageHeader';
-import { Ticket } from '../types';
-import * as S from './Page.styles'
+import axios from '@api/axios'
+import TicketSummaryCard from '@components/molecules/TicketSummary/TicketSummaryCard';
+import PageHeader from '@components/atoms/PageHeader/PageHeader';
+import { Ticket } from '@types';
 
 const AdminPage: React.FC = () => {
   const [tickets, setTickets] = useState<Ticket[]>([])
@@ -38,9 +37,9 @@ const AdminPage: React.FC = () => {
     <>
       {tickets.length === 0 ? (<p>No tickets found.</p>) :
        (tickets.map((ticketObj: Ticket) => (
-        <S.SummaryCardContainer key={ticketObj.id}>
+        <div key={ticketObj.id}>
           <TicketSummaryCard details={ticketObj} />
-        </S.SummaryCardContainer>
+        </div>
       )))}
     </>
   )

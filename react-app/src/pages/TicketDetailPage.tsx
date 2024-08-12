@@ -1,14 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from '../api/axios'
-import TicketDetailCard from '../components/molecules/TicketDetailCard/TicketDetailCard'
-import { Ticket, Comment } from '../types'
-import PageHeader from '../components/atoms/PageHeader/PageHeader'
-import CommentForm from '../components/molecules/CommentForm/CommentForm'
-import * as S from './Page.styles'
-import CommentList from '../components/molecules/CommentList/CommentList'
+import { useNavigate } from 'react-router-dom'
+import axios from '@api/axios'
+import TicketDetailCard from '@components/molecules/TicketDetailCard/TicketDetailCard'
+import { Ticket, Comment } from '@types'
+import PageHeader from '@components/atoms/PageHeader/PageHeader'
+import CommentForm from '@components/molecules/CommentForm/CommentForm'
+import CommentList from '@components/molecules/CommentList/CommentList'
+import './Pages.css'
+import '@styles/App.css'
 
 const TicketDetailPage: React.FC = () => {
+    const navigate = useNavigate()
     const {id} = useParams<{id: string}>()
     const [ticket, setTicket] = useState<Ticket | null>(null)
     const [comments, setComments] = useState<Comment[]>([])
@@ -57,10 +60,16 @@ const TicketDetailPage: React.FC = () => {
         return <PageHeader>Error: Invalid ticket ID</PageHeader>;
     }
 
+    const handleClick = () => {
+        navigate(`/admin`)
+      }
+
+
     return (
-        <div>
+        <div className='ticket-detail-page-container'>
+            <div className='ticket-detail-back-btn bold' onClick={handleClick}>{'< Back'}</div>
             <TicketDetailCard details={ticket} setTicket={setTicket}/>
-            <S.SectionHeader>Comments</S.SectionHeader>
+            <div className='page-section-header'>Comments</div>
             <CommentForm ticketId={id} fetchTicket={fetchComments}/>
             <CommentList comments={comments} />
         </div>

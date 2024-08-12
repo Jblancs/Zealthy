@@ -1,0 +1,11 @@
+.button-atom {
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.1s;
+}
+
+.button-atom:hover {
+  box-shadow: 1px 2px 5px black;
+  transform: scale(1.02);
+}

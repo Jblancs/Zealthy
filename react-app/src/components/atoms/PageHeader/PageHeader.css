@@ -1,0 +1,6 @@
+.page-header {
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-gray);
+  padding: 40px 0;
+}

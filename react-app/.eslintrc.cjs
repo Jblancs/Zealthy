@@ -56,7 +56,7 @@ module.exports = {
     "prettier"
   ],
   settings: {
-    react: { version: "18.2" }
+    react: { version: "18.2" },
   },
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   rules: {

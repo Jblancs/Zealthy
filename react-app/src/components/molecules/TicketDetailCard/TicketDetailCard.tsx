@@ -1,8 +1,10 @@
 import React from 'react'
-import * as S from './TicketDetail.styles'
 import { Ticket } from '../../../types'
-import PageHeader from '../../atoms/PageHeader/PageHeader'
+import PageHeader from '@components/atoms/PageHeader/PageHeader'
 import StatusForm from '../StatusForm/StatusForm'
+import './TicketDetailCard.css'
+
+
 
 interface DetailCardProps {
     details: Ticket | null;
@@ -13,33 +15,34 @@ const TicketDetailCard: React.FC<DetailCardProps> = ({
   details,
   setTicket
 }) => {
+
   if (!details) {
     return (
-      <S.CardContainer>
+      <div className='detail-container'>
         <PageHeader>Loading ticket details...</PageHeader>
-      </S.CardContainer>
+      </div>
     )
   }
 
   const { id, name, description, status, email } = details
 
   return (
-    <S.CardContainer>
+    <div className='detail-container'>
       <PageHeader>Support Ticket #{id}</PageHeader>
       <StatusForm currentStatus={status} ticketId={id} setTicket={setTicket}/>
-      <S.CreatedByContainer>
-        <S.CreatedBySection>
-          <strong>Created By:</strong> {name}
-        </S.CreatedBySection>
-        <S.CreatedBySection>
-          <strong>Email:</strong> {email}
-        </S.CreatedBySection>
-      </S.CreatedByContainer>
-      <S.DescriptionContainer>
+      <div className='detail-creator-container'>
+        <div className='detail-creator-section'>
+          <span><strong>Created By:</strong></span> <span>{name}</span>
+        </div>
+        <div className='detail-creator-section'>
+          <span><strong>Email:</strong></span> <span>{email}</span>
+        </div>
+      </div>
+      <div className='detail-desc-container'>
         <strong>Description:</strong>
-        <S.DescriptionSection>{description}</S.DescriptionSection>
-      </S.DescriptionContainer>
-    </S.CardContainer>
+        <div className='detail-desc-section'>{description}</div>
+      </div>
+    </div>
   )
 }
 

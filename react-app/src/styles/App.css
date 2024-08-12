@@ -1,0 +1,15 @@
+:root {
+  --border-gray: #bfbfbf;
+}
+
+.centered {
+  text-align: center;
+}
+
+.no-border {
+  border: none;
+}
+
+.bold {
+  font-weight: bold;
+}

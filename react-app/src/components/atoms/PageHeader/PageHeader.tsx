@@ -1,5 +1,5 @@
 import React from 'react'
-import * as S from './PageHeader.styles'
+import './PageHeader.css'
 
 interface PageHeaderProps {
     children: React.ReactNode;
@@ -7,9 +7,9 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({children}) => {
     return (
-        <S.HeaderContainer>
+        <div className='page-header'>
             {children}
-        </S.HeaderContainer>
+        </div>
     )
 }
 
