@@ -38,11 +38,12 @@ const CommentForm: React.FC<CommentProps> = ({ ticketId, fetchTicket }) => {
   ) => {
     try {
       const res = await axios.post(`/comments/tickets/${ticketId}`, payload)
-      console.log('“Would normally send email here with body: ...”', res.data)
       actions.resetForm()
+      alert('Comment submission successful!')
       await fetchTicket()
+
     } catch (error) {
-      console.error('Error submitting ticket: ', error)
+      console.error('Error posting comment: ', error)
     } finally {
       actions.setSubmitting(false)
     }

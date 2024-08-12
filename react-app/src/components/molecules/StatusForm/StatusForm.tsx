@@ -29,11 +29,10 @@ const StatusForm: React.FC<StatusFormProps> = ({
         try {
             const res = await axios.put(`/tickets/${ticketId}`, payload)
             setTicket(res.data)
-            
-            console.log('Ticket updated successfully', res.data)
             actions.resetForm()
+            alert('Status updated successful!')
           } catch (error) {
-            console.error('Error submitting ticket: ', error)
+            console.error('Error updating status: ', error)
           } finally {
             actions.setSubmitting(false)
           }
